@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+env/
+venv/
+.env
+.mypy_cache/
+.pytest_cache/
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
