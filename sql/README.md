@@ -2,4 +2,4 @@
 
 Standalone, well-commented reference queries, organized by company:
 
-- [healthtech/](healthtech/) — queries against the health tech schemas
+- [apc_wellness/](apc_wellness/) — queries against the APC Wellness schemas

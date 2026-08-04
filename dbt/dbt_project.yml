@@ -17,13 +17,13 @@ models:
   db_portfolio:
     staging:
       +materialized: view
-      healthtech:
-        +schema: stg_healthtech
+      apc_wellness:
+        +schema: stg_apc_wellness
     intermediate:
       +materialized: view
-      healthtech:
-        +schema: int_healthtech
+      apc_wellness:
+        +schema: int_apc_wellness
     marts:
       +materialized: table
-      healthtech:
-        +schema: mart_healthtech
+      apc_wellness:
+        +schema: mart_apc_wellness
