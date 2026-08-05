@@ -1,0 +1,3 @@
+plan_id,plan_name,tier,monthly_price
+plan_standard,Standard,standard,14.99
+plan_premium,Premium,premium,24.99
