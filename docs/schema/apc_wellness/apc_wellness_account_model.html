@@ -1,11 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APC Wellness — Account Model</title>
 <style>
-#erd svg.erDiagram .divider path { stroke-opacity: 0.5; }
-#erd svg.erDiagram .row-rect-odd path,
-#erd svg.erDiagram .row-rect-odd rect,
-#erd svg.erDiagram .row-rect-even path,
-#erd svg.erDiagram .row-rect-even rect { stroke: none !important; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    max-width: 800px;
+    margin: 48px auto;
+    padding: 0 24px;
+  }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  p.meta { color: #666; font-size: 0.9rem; margin-top: 0; margin-bottom: 32px; }
+  code { background: #f2f2f2; padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+  a.back { display: inline-block; margin-top: 32px; font-size: 0.9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0F1214; color: #EDEAE2; }
+    code { background: #171B1E; }
+    p.meta { color: #8B9198; }
+  }
+  #erd svg.erDiagram .divider path { stroke-opacity: 0.5; }
+  #erd svg.erDiagram .row-rect-odd path,
+  #erd svg.erDiagram .row-rect-odd rect,
+  #erd svg.erDiagram .row-rect-even path,
+  #erd svg.erDiagram .row-rect-even rect { stroke: none !important; }
 </style>
+</head>
+<body>
+<h1>APC Wellness — account model</h1>
+<p class="meta">Core accounts / members / subscriptions / plans structure, part of the <code>db_portfolio</code> warehouse (<code>*_apc_wellness</code> schemas).</p>
 <div id="erd"></div>
+<a class="back" href="../../index.html">&larr; Back to portfolio</a>
 <script type="module">
 import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
 const dark = matchMedia('(prefers-color-scheme: dark)').matches;
@@ -13,11 +41,11 @@ await document.fonts.ready;
 mermaid.initialize({
   startOnLoad: false,
   theme: 'base',
-  fontFamily: '"anthropic-sans", sans-serif',
+  fontFamily: '"Segoe UI", sans-serif',
   themeVariables: {
     darkMode: dark,
     fontSize: '13px',
-    fontFamily: '"anthropic-sans", sans-serif',
+    fontFamily: '"Segoe UI", sans-serif',
     lineColor: dark ? '#9c9a92' : '#73726c',
     textColor: dark ? '#c2c0b6' : '#3d3d3a',
   },
@@ -77,3 +105,5 @@ document.querySelectorAll('#erd svg.erDiagram .row-rect-odd path, #erd svg.erDia
   p.setAttribute('stroke', 'none');
 });
 </script>
+</body>
+</html>
