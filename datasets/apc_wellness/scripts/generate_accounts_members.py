@@ -153,24 +153,24 @@ def main():
     subscriptions = assign_plans_and_subscriptions(accounts_by_id, members)
 
     # --- write CSVs ---
-    with open(OUT_DIR / "plans.csv", "w", newline="") as f:
+    with open(OUT_DIR / "plans.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=PLAN_ROWS[0].keys())
         w.writeheader()
         w.writerows(PLAN_ROWS)
 
-    with open(OUT_DIR / "accounts.csv", "w", newline="") as f:
+    with open(OUT_DIR / "accounts.csv", "w", newline="", encoding="utf-8") as f:
         fieldnames = ["account_id", "account_type", "account_name", "industry", "status", "per_member_rate"]
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(accounts)
 
-    with open(OUT_DIR / "members.csv", "w", newline="") as f:
+    with open(OUT_DIR / "members.csv", "w", newline="", encoding="utf-8") as f:
         fieldnames = ["member_id", "account_id", "email", "join_date", "eligibility_status", "sponsored", "is_fitbit_seed"]
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(members)
 
-    with open(OUT_DIR / "subscriptions.csv", "w", newline="") as f:
+    with open(OUT_DIR / "subscriptions.csv", "w", newline="", encoding="utf-8") as f:
         fieldnames = ["subscription_id", "member_id", "plan_id", "start_date", "end_date", "status", "billed_amount"]
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

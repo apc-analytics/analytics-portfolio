@@ -42,6 +42,7 @@ TABLES = {
     "subscriptions": "subscriptions.csv",
     "workouts": "workouts.csv",
     "orders": "orders.csv",
+    "support_tickets": "support_tickets.csv",
 }
 
 
@@ -56,7 +57,7 @@ def get_connection():
 
 
 def read_header(csv_path: Path):
-    with open(csv_path, newline="") as f:
+    with open(csv_path, newline="", encoding="utf-8") as f:
         return next(csv.reader(f))
 
 
@@ -67,7 +68,7 @@ def load_table(conn, table_name: str, csv_path: Path):
     with conn.cursor() as cur:
         cur.execute(f'DROP TABLE IF EXISTS {SCHEMA}."{table_name}" CASCADE;')
         cur.execute(f'CREATE TABLE {SCHEMA}."{table_name}" ({column_defs});')
-        with open(csv_path, "r", newline="") as f:
+        with open(csv_path, "r", newline="", encoding="utf-8") as f:
             cur.copy_expert(
                 f'COPY {SCHEMA}."{table_name}" FROM STDIN WITH CSV HEADER',
                 f,

@@ -1,0 +1,166 @@
+ticket_id,member_id,ticket_type,ticket_status,ticket_priority,ticket_channel,csat_rating,created_at,resolved_at
+tkt_dfbd51e35b77,mem_303eb3a07b7b,Billing inquiry,Closed,Critical,Phone,4.0,2026-05-08,2026-05-08
+tkt_3eb28d0fb865,mem_303eb3a07b7b,Refund request,Pending Customer Response,High,Social media,,2026-07-06,
+tkt_0a36b0b7781a,mem_852dc505f153,Technical issue,Closed,High,Phone,5.0,2026-03-05,2026-03-07
+tkt_98ccfdbe7ccf,mem_c3ccc589c518,Technical issue,Closed,High,Phone,3.0,2026-07-06,2026-07-08
+tkt_a29c823f66a0,mem_c3ccc589c518,Technical issue,Closed,High,Email,2.0,2026-08-06,2026-08-06
+tkt_272209ee0cdb,mem_7fd5fccf9942,Product inquiry,Open,Low,Social media,,2026-02-18,
+tkt_cac83e68bb00,mem_5c06a1aa5f03,Billing inquiry,Closed,Medium,Phone,5.0,2026-03-20,2026-03-23
+tkt_e60f10e07bdf,mem_531133fb0e8d,Billing inquiry,Pending Customer Response,Critical,Chat,,2026-07-02,
+tkt_a83ccd806c24,mem_531133fb0e8d,Billing inquiry,Closed,High,Chat,5.0,2026-07-08,2026-07-09
+tkt_b00962af3a14,mem_531133fb0e8d,Billing inquiry,Closed,Critical,Social media,1.0,2025-12-16,2025-12-16
+tkt_197d9375197e,mem_531133fb0e8d,Product inquiry,Closed,Critical,Social media,5.0,2025-08-18,2025-08-19
+tkt_0574005f2bb6,mem_b04836b32108,Technical issue,Closed,Critical,Chat,1.0,2026-05-15,2026-05-15
+tkt_229d2416962f,mem_b04836b32108,Cancellation request,Open,Medium,Chat,,2026-03-02,
+tkt_b26b6fa07efd,mem_b782e4ac252f,Cancellation request,Pending Customer Response,Medium,Chat,,2026-04-16,
+tkt_36673e0cbc31,mem_556123fce365,Billing inquiry,Closed,Medium,Phone,2.0,2025-12-12,2025-12-17
+tkt_9c9a9d27d709,mem_556123fce365,Product inquiry,Pending Customer Response,High,Phone,,2025-11-06,
+tkt_31ce3f2e9f8a,mem_85004cb3bae2,Product inquiry,Pending Customer Response,Critical,Email,,2026-05-22,
+tkt_654fdb9648f3,mem_85004cb3bae2,Refund request,Closed,Critical,Phone,4.0,2026-01-15,2026-01-15
+tkt_b2a78ef04ed4,mem_d8858d7f7be7,Cancellation request,Closed,Low,Social media,5.0,2026-05-10,2026-05-18
+tkt_8f9468c46aa4,mem_d8858d7f7be7,Cancellation request,Pending Customer Response,High,Phone,,2026-04-01,
+tkt_55e217a9ac22,mem_abee9f64a322,Product inquiry,Closed,Low,Email,3.0,2026-07-03,2026-07-09
+tkt_03f9a2b7a9fb,mem_4236942c19ce,Technical issue,Pending Customer Response,Medium,Phone,,2025-11-16,
+tkt_22843ca129d6,mem_7abf8dc57c93,Billing inquiry,Open,Medium,Chat,,2026-05-11,
+tkt_c29cc5e42eb2,mem_44596c538014,Product inquiry,Closed,Low,Email,4.0,2026-07-21,2026-07-29
+tkt_6955a0f9ed56,mem_a9cdb165b38c,Technical issue,Open,Medium,Chat,,2026-04-03,
+tkt_06a085ad36e9,mem_0a57b349db71,Billing inquiry,Open,Critical,Phone,,2026-06-20,
+tkt_c16778ddc208,mem_0a57b349db71,Technical issue,Closed,Low,Chat,1.0,2026-08-04,2026-08-06
+tkt_b02fa3c8c130,mem_0a57b349db71,Refund request,Closed,Medium,Social media,5.0,2026-07-08,2026-07-13
+tkt_f56f27e79d1f,mem_8d8a64c2f367,Billing inquiry,Pending Customer Response,Low,Email,,2026-05-20,
+tkt_ffcba67df02c,mem_8d8a64c2f367,Product inquiry,Pending Customer Response,Critical,Chat,,2026-03-08,
+tkt_5e053b3a90e2,mem_8d8a64c2f367,Billing inquiry,Open,High,Social media,,2025-11-23,
+tkt_9f3ac2d93519,mem_a4f5f4cfd92a,Product inquiry,Open,Critical,Email,,2025-11-11,
+tkt_cd35aaceb153,mem_cd64132b5ee3,Billing inquiry,Closed,Critical,Phone,5.0,2026-03-15,2026-03-16
+tkt_d22e93f3bfe5,mem_cd64132b5ee3,Refund request,Closed,Medium,Social media,2.0,2026-03-31,2026-04-04
+tkt_c954e1b07e2d,mem_19fc98966cfe,Billing inquiry,Closed,Critical,Social media,1.0,2025-05-03,2025-05-03
+tkt_93d2e681a295,mem_f5eadf0c263d,Refund request,Open,Medium,Phone,,2026-04-29,
+tkt_d7198f0bcfd8,mem_f5eadf0c263d,Refund request,Open,High,Chat,,2026-03-19,
+tkt_25284b493b03,mem_f5eadf0c263d,Technical issue,Open,Critical,Chat,,2026-02-24,
+tkt_2b745850f857,mem_7dc7dbfeefcb,Product inquiry,Open,Medium,Social media,,2026-02-28,
+tkt_4d1521dd7ab1,mem_c7f0da7a9e71,Product inquiry,Open,Critical,Chat,,2026-07-02,
+tkt_858381cb807d,mem_c74b775c3fd8,Cancellation request,Closed,Medium,Email,2.0,2026-01-18,2026-01-23
+tkt_e12f41f6beb7,mem_1536946f9a75,Billing inquiry,Closed,High,Social media,4.0,2026-06-20,2026-06-21
+tkt_e98a950add27,mem_9b84e56449c2,Product inquiry,Pending Customer Response,Low,Social media,,2026-02-06,
+tkt_31304b7d7935,mem_0b9c9762b2e0,Product inquiry,Pending Customer Response,Critical,Social media,,2025-09-16,
+tkt_cf141b265d94,mem_75dc58d7650f,Refund request,Open,Medium,Chat,,2026-03-02,
+tkt_0e84630ee8ed,mem_75dc58d7650f,Product inquiry,Open,Medium,Email,,2024-12-12,
+tkt_813d04e10f7f,mem_75dc58d7650f,Cancellation request,Pending Customer Response,Critical,Phone,,2026-05-27,
+tkt_76fa25ee53aa,mem_3980b5bf0267,Technical issue,Open,High,Social media,,2026-06-01,
+tkt_c86fb9dbc7e9,mem_f08db6dc3dec,Technical issue,Open,High,Email,,2026-04-21,
+tkt_ce2f193a9835,mem_ce68b39535f4,Billing inquiry,Pending Customer Response,High,Email,,2026-05-27,
+tkt_41a2ec4406db,mem_ce68b39535f4,Billing inquiry,Pending Customer Response,Medium,Chat,,2026-06-30,
+tkt_d022b2f6a9f5,mem_ce68b39535f4,Billing inquiry,Pending Customer Response,High,Chat,,2025-12-27,
+tkt_9fc11ac8eeaa,mem_ce68b39535f4,Billing inquiry,Closed,Low,Social media,2.0,2026-05-10,2026-05-18
+tkt_4d5a011c2221,mem_9e6d92f6fe02,Refund request,Closed,High,Chat,1.0,2026-04-14,2026-04-17
+tkt_cf9270d84c23,mem_42c76333a1c4,Billing inquiry,Closed,Medium,Email,2.0,2026-07-29,2026-08-02
+tkt_1310dce62e32,mem_1057e9fb58aa,Billing inquiry,Open,High,Phone,,2026-06-28,
+tkt_58f0f794997b,mem_6b0b823aa3cd,Refund request,Closed,Low,Email,3.0,2026-04-30,2026-05-09
+tkt_ddb276476c26,mem_2ba5ba90569e,Billing inquiry,Closed,Low,Chat,3.0,2026-07-03,2026-07-12
+tkt_3eada9307fb4,mem_2ba5ba90569e,Refund request,Pending Customer Response,Low,Email,,2026-06-29,
+tkt_87d2a3331807,mem_8e742f12b9ab,Cancellation request,Open,Medium,Social media,,2026-06-27,
+tkt_7f8109c1df55,mem_8e742f12b9ab,Refund request,Closed,High,Email,5.0,2026-05-04,2026-05-05
+tkt_8d97da1c76ca,mem_12fa1ee5c6ee,Refund request,Pending Customer Response,High,Phone,,2026-04-10,
+tkt_4c9136a1a514,mem_4f6d75f501c4,Product inquiry,Pending Customer Response,Critical,Social media,,2026-05-06,
+tkt_0658c26f7be0,mem_adbd7c9eba3b,Billing inquiry,Pending Customer Response,High,Phone,,2026-05-27,
+tkt_2e879842408f,mem_13010a20d9ee,Cancellation request,Closed,High,Chat,1.0,2026-02-26,2026-03-01
+tkt_d518e87fc160,mem_13010a20d9ee,Billing inquiry,Closed,Low,Phone,1.0,2026-06-22,2026-06-27
+tkt_45abed340ab0,mem_13010a20d9ee,Cancellation request,Open,Low,Social media,,2026-01-26,
+tkt_00256297a67d,mem_13010a20d9ee,Technical issue,Open,Medium,Phone,,2026-01-02,
+tkt_87daddeb58db,mem_7d52dd3500ce,Cancellation request,Open,Medium,Email,,2025-12-31,
+tkt_36d7994e03df,mem_27541bf5ec9b,Technical issue,Open,High,Email,,2025-11-11,
+tkt_7e0a4262abc7,mem_27541bf5ec9b,Refund request,Open,High,Phone,,2026-01-23,
+tkt_87ac6ae82f4d,mem_27541bf5ec9b,Product inquiry,Open,Medium,Phone,,2026-06-18,
+tkt_e4b7a0d131ef,mem_27541bf5ec9b,Cancellation request,Open,Low,Phone,,2025-04-18,
+tkt_9f9cc1d5ddc1,mem_dce7e5bc9ba6,Billing inquiry,Pending Customer Response,Low,Social media,,2026-01-07,
+tkt_c1290d5081cc,mem_dce7e5bc9ba6,Technical issue,Pending Customer Response,Critical,Social media,,2025-12-29,
+tkt_35872e44d5f7,mem_dce7e5bc9ba6,Technical issue,Open,Critical,Chat,,2025-11-20,
+tkt_815a714098a8,mem_ee324176762c,Cancellation request,Pending Customer Response,Medium,Phone,,2026-03-09,
+tkt_4521faae9a33,mem_e8073d1e6aba,Cancellation request,Closed,Low,Chat,5.0,2026-06-19,2026-06-29
+tkt_d53ad62b55f6,mem_e8073d1e6aba,Billing inquiry,Pending Customer Response,Medium,Social media,,2026-07-20,
+tkt_ff3fc3f1b731,mem_787857599fb2,Cancellation request,Closed,Critical,Social media,3.0,2026-05-26,2026-05-26
+tkt_664a2c1336df,mem_787857599fb2,Technical issue,Pending Customer Response,High,Chat,,2026-08-05,
+tkt_1daf88554616,mem_c80bfca8997a,Billing inquiry,Closed,High,Email,2.0,2026-05-10,2026-05-13
+tkt_cc72558ed42c,mem_a0a1caede415,Technical issue,Closed,Medium,Chat,3.0,2026-03-02,2026-03-04
+tkt_58e03a124d42,mem_9af846020bf8,Cancellation request,Open,Critical,Phone,,2026-06-03,
+tkt_516b47061a63,mem_9af846020bf8,Product inquiry,Closed,Low,Chat,1.0,2026-08-01,2026-08-06
+tkt_deea0a5359a5,mem_7dd003f58231,Cancellation request,Pending Customer Response,Critical,Email,,2025-11-01,
+tkt_8ea5115b87d9,mem_beb2cc9450bf,Product inquiry,Closed,Low,Email,4.0,2025-08-04,2025-08-11
+tkt_bfafee84b9f3,mem_4af655c6556c,Technical issue,Pending Customer Response,Critical,Social media,,2026-05-17,
+tkt_980a4dc4063f,mem_bdb95a02843b,Product inquiry,Closed,Critical,Social media,4.0,2026-08-01,2026-08-01
+tkt_8f210ece8355,mem_bdb95a02843b,Product inquiry,Closed,Low,Chat,2.0,2026-02-13,2026-02-16
+tkt_1ca834ed8d49,mem_bdb95a02843b,Product inquiry,Open,Critical,Phone,,2026-01-18,
+tkt_70bd099235f9,mem_bdb95a02843b,Refund request,Pending Customer Response,Medium,Phone,,2026-03-10,
+tkt_5d5588510a75,mem_c0dd93ee020a,Technical issue,Pending Customer Response,Critical,Phone,,2026-03-01,
+tkt_7ae4ee8e4960,mem_c0dd93ee020a,Product inquiry,Open,High,Social media,,2026-05-09,
+tkt_852eda12bce3,mem_c0dd93ee020a,Billing inquiry,Closed,Critical,Chat,2.0,2026-07-29,2026-07-29
+tkt_07b65714f8d5,mem_535b1cf18a55,Technical issue,Closed,Medium,Chat,3.0,2026-02-11,2026-02-16
+tkt_b225b1a926ce,mem_9dfafd9e19b7,Technical issue,Open,Critical,Social media,,2026-05-02,
+tkt_1b0a195ab1f0,mem_ca7e4b3db480,Refund request,Open,High,Chat,,2026-08-01,
+tkt_f7901fdfc928,mem_643148e3a860,Refund request,Closed,Critical,Social media,3.0,2025-09-09,2025-09-10
+tkt_f9e4667a19ef,mem_643148e3a860,Technical issue,Closed,Low,Social media,2.0,2026-07-13,2026-07-22
+tkt_14a7e37189da,mem_643148e3a860,Billing inquiry,Closed,Critical,Chat,5.0,2025-10-29,2025-10-29
+tkt_abfb651501e7,mem_9d73aea1903e,Cancellation request,Closed,High,Phone,5.0,2025-01-02,2025-01-03
+tkt_ef0b80d8561c,mem_9d73aea1903e,Product inquiry,Pending Customer Response,Low,Phone,,2026-03-08,
+tkt_b9e993aa2e8c,mem_9d73aea1903e,Product inquiry,Closed,High,Social media,2.0,2025-08-09,2025-08-10
+tkt_a54bc4778c32,mem_e3d5614d7f95,Billing inquiry,Closed,Critical,Chat,4.0,2026-07-31,2026-08-01
+tkt_fbdb4ce1e435,mem_e0cfb0370682,Cancellation request,Open,Low,Phone,,2025-03-23,
+tkt_e349c84f15a6,mem_e0cfb0370682,Billing inquiry,Open,Critical,Phone,,2025-10-13,
+tkt_3541bc3f7233,mem_e0dcd4cdbcc1,Refund request,Closed,Critical,Email,3.0,2026-07-24,2026-07-24
+tkt_c30986055272,mem_e0dcd4cdbcc1,Product inquiry,Pending Customer Response,Low,Social media,,2026-04-14,
+tkt_84b032a46d9d,mem_48c1cbbdca13,Product inquiry,Pending Customer Response,Critical,Social media,,2025-09-08,
+tkt_3463728dd92d,mem_d3299c692b20,Refund request,Open,High,Email,,2026-06-30,
+tkt_22988bb13a09,mem_d3299c692b20,Product inquiry,Open,Medium,Email,,2026-01-08,
+tkt_4e357ad18e9e,mem_d7628c181efc,Product inquiry,Pending Customer Response,Medium,Email,,2026-07-06,
+tkt_60fc4be727d6,mem_57888ebca2cd,Refund request,Closed,High,Chat,3.0,2026-06-29,2026-07-02
+tkt_0e3703e2a096,mem_57888ebca2cd,Product inquiry,Pending Customer Response,Medium,Email,,2026-08-01,
+tkt_d8df8b870be1,mem_9f59dcbde397,Technical issue,Pending Customer Response,Medium,Email,,2026-07-02,
+tkt_7af43080b9c6,mem_b8c169a40db3,Cancellation request,Open,High,Social media,,2026-07-29,
+tkt_592f4650d7d5,mem_77d98bfd527d,Refund request,Closed,Medium,Phone,5.0,2026-07-25,2026-07-30
+tkt_256a42f528c8,mem_0e1e7fdf5930,Billing inquiry,Closed,Critical,Social media,4.0,2026-04-15,2026-04-16
+tkt_19499aeb3bc5,mem_c1436b5333d4,Billing inquiry,Closed,Critical,Phone,4.0,2026-07-15,2026-07-15
+tkt_aa02b678b961,mem_c1436b5333d4,Product inquiry,Open,Low,Phone,,2026-07-22,
+tkt_21aa86e92d35,mem_c1436b5333d4,Cancellation request,Pending Customer Response,High,Email,,2026-07-16,
+tkt_d7e8789cba99,mem_bce32758aa8f,Refund request,Closed,Critical,Email,2.0,2025-10-25,2025-10-25
+tkt_62337d2228d7,mem_bce32758aa8f,Cancellation request,Closed,Medium,Email,3.0,2025-11-12,2025-11-17
+tkt_ff410c40ccb2,mem_bce32758aa8f,Product inquiry,Open,Low,Social media,,2025-10-04,
+tkt_236b7604d265,mem_1903725e7f00,Cancellation request,Open,Low,Social media,,2026-01-22,
+tkt_ac29f1262761,mem_1903725e7f00,Product inquiry,Pending Customer Response,Critical,Social media,,2026-04-17,
+tkt_ebe4ad1714b9,mem_883b980b22f8,Billing inquiry,Closed,Medium,Social media,5.0,2025-10-24,2025-10-28
+tkt_d63191c1fd58,mem_3cdfc9e19e0c,Cancellation request,Open,High,Email,,2026-02-08,
+tkt_1250c40724e5,mem_f56ce479bd38,Product inquiry,Open,Medium,Social media,,2026-05-06,
+tkt_198386ef3a9d,mem_f56ce479bd38,Cancellation request,Open,Low,Phone,,2026-05-22,
+tkt_ded4980341a5,mem_f56ce479bd38,Product inquiry,Closed,Low,Email,3.0,2026-05-18,2026-05-22
+tkt_2fda486b7f82,mem_3a383e027a26,Product inquiry,Closed,Medium,Chat,3.0,2025-06-15,2025-06-18
+tkt_94c5c114d3a3,mem_3a383e027a26,Billing inquiry,Open,Medium,Phone,,2025-09-18,
+tkt_bfbd0667ac97,mem_3a383e027a26,Technical issue,Open,Low,Chat,,2026-02-21,
+tkt_46696575bb3c,mem_57b342f95f16,Refund request,Closed,Medium,Email,1.0,2026-07-02,2026-07-05
+tkt_1b9755818175,mem_d828e538fa51,Product inquiry,Pending Customer Response,High,Email,,2026-07-04,
+tkt_99d4deb1fa7f,mem_c485ae6ed030,Cancellation request,Closed,High,Social media,5.0,2026-03-07,2026-03-08
+tkt_7b68afe237ae,mem_401a9b4f4917,Refund request,Pending Customer Response,Low,Chat,,2026-07-03,
+tkt_050359ffb5cc,mem_401a9b4f4917,Cancellation request,Pending Customer Response,Critical,Email,,2026-07-02,
+tkt_83d829b390ba,mem_c36ebfc7852b,Technical issue,Open,High,Email,,2026-02-08,
+tkt_adcb69c3840a,mem_c36ebfc7852b,Cancellation request,Pending Customer Response,Low,Phone,,2026-06-27,
+tkt_24286d296d15,mem_5f5ccc809003,Billing inquiry,Open,High,Social media,,2026-03-30,
+tkt_fd5b0c9a2a32,mem_2680bed43f62,Technical issue,Closed,Medium,Email,1.0,2026-03-16,2026-03-19
+tkt_9b418d1584b7,mem_d6f27f81affe,Technical issue,Closed,Medium,Phone,5.0,2026-08-02,2026-08-06
+tkt_fb09f15394a2,mem_ed0d36f79c91,Billing inquiry,Open,Critical,Social media,,2026-04-29,
+tkt_7e19c13976d6,mem_78a6230382b3,Billing inquiry,Pending Customer Response,High,Chat,,2026-03-16,
+tkt_b8ba5c739751,mem_78a6230382b3,Billing inquiry,Closed,Low,Email,3.0,2026-08-05,2026-08-06
+tkt_78fc95024351,mem_78a6230382b3,Refund request,Pending Customer Response,Medium,Chat,,2026-07-11,
+tkt_26cd20a6f8ed,mem_253c3f7653c5,Product inquiry,Open,High,Social media,,2026-04-03,
+tkt_8d38a76ea993,mem_9d042694d7e1,Refund request,Open,Critical,Phone,,2026-05-30,
+tkt_f63346abe522,mem_daf47a03d602,Product inquiry,Pending Customer Response,Low,Social media,,2025-09-22,
+tkt_aa02c9fc3528,mem_4fb91f3c6fd5,Cancellation request,Open,Low,Chat,,2026-07-09,
+tkt_c0317f38095b,mem_4fb91f3c6fd5,Technical issue,Pending Customer Response,Medium,Email,,2026-05-23,
+tkt_bba0c238c7fa,mem_6b4e1750e7c2,Technical issue,Pending Customer Response,Medium,Phone,,2026-07-14,
+tkt_805e4934b931,mem_30dc5b757c69,Refund request,Pending Customer Response,Low,Phone,,2026-07-26,
+tkt_79f67c68dbd4,mem_16a5ee1d2145,Technical issue,Open,Critical,Phone,,2026-07-04,
+tkt_79e25ec27367,mem_16a5ee1d2145,Technical issue,Open,Low,Social media,,2026-07-01,
+tkt_7f1567b1ff41,mem_16a5ee1d2145,Refund request,Closed,Low,Email,3.0,2026-05-13,2026-05-19
+tkt_1419cbe3923a,mem_16a5ee1d2145,Technical issue,Pending Customer Response,Medium,Phone,,2026-04-28,
+tkt_126a2e9f90d2,mem_928759c8ef69,Billing inquiry,Pending Customer Response,High,Phone,,2026-03-31,
+tkt_3b65a5dd6021,mem_928759c8ef69,Cancellation request,Pending Customer Response,Critical,Email,,2026-04-13,
+tkt_fadd8c88e3ca,mem_87d462396832,Product inquiry,Open,Medium,Chat,,2025-10-24,
+tkt_aa833c66853d,mem_b12271ee66ae,Billing inquiry,Pending Customer Response,Critical,Social media,,2025-12-24,
+tkt_09af698805b8,mem_637093d0b1e1,Cancellation request,Closed,High,Phone,4.0,2025-05-07,2025-05-09

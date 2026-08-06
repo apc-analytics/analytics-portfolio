@@ -49,7 +49,7 @@ JITTER_PCT = 0.15  # +/- jitter applied to bootstrapped synthetic values
 
 
 def load_members(path: Path):
-    with open(path, newline="") as f:
+    with open(path, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
@@ -61,7 +61,7 @@ def load_real_activity(paths: list):
     to ~62 days of history instead of ~31."""
     by_user = {}
     for path in paths:
-        with open(path, newline="") as f:
+        with open(path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 real_id = row["Id"]
@@ -176,7 +176,7 @@ def main():
     fieldnames = ["workout_id", "member_id", "activity_date", "steps", "distance_km",
                   "very_active_minutes", "moderately_active_minutes", "light_active_minutes",
                   "sedentary_minutes", "calories_burned", "source"]
-    with open(OUT_DIR / "workouts.csv", "w", newline="") as f:
+    with open(OUT_DIR / "workouts.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(workout_rows)

@@ -76,7 +76,7 @@ def main():
     if not members_path.exists():
         raise SystemExit(f"{members_path} not found — run generate_accounts_members.py first.")
 
-    with open(members_path, newline="") as f:
+    with open(members_path, newline="", encoding="utf-8") as f:
         members = list(csv.DictReader(f))
 
     today = date.today()
@@ -89,7 +89,7 @@ def main():
         for _ in range(num_orders):
             orders.append(build_order(m["member_id"], join_date, today))
 
-    with open(OUT_DIR / "orders.csv", "w", newline="") as f:
+    with open(OUT_DIR / "orders.csv", "w", newline="", encoding="utf-8") as f:
         fieldnames = ["order_id", "member_id", "order_type", "order_date", "amount", "status"]
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

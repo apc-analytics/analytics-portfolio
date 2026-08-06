@@ -10,3 +10,5 @@ sources:
       - name: plans
       - name: subscriptions
       - name: workouts
+      - name: orders
+      - name: support_tickets
