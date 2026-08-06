@@ -44,6 +44,7 @@ TABLES = {
     "orders": "orders.csv",
     "support_tickets": "support_tickets.csv",
     "campaigns": "campaigns.csv",
+    "account_acquisition": "account_acquisition.csv",
 }
 
 

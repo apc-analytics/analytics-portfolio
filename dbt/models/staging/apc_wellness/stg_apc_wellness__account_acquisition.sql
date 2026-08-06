@@ -1,0 +1,1 @@
+select * from {{ source('apc_wellness', 'account_acquisition') }}

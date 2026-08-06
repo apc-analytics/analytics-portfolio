@@ -13,3 +13,4 @@ sources:
       - name: orders
       - name: support_tickets
       - name: campaigns
+      - name: account_acquisition
