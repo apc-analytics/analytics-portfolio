@@ -12,3 +12,4 @@ sources:
       - name: workouts
       - name: orders
       - name: support_tickets
+      - name: campaigns

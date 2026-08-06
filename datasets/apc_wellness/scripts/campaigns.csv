@@ -1,0 +1,33 @@
+campaign_id,campaign_name,channel,target_audience,start_date,end_date,status,budget,spend,impressions,clicks,conversions
+camp_16116e6e69d1,Habit Streak — Paid Social,paid_social,individual,2025-05-14,2025-06-12,completed,1504.45,1500.38,364785,8579,413
+camp_7eeb7bb0a892,Referral Boost — Paid Social,paid_social,individual,2024-11-09,2024-12-06,completed,1546.97,1501.19,304254,3034,168
+camp_5c813fe2e923,Q1 Push — Referral Program,referral_program,individual,2026-04-01,2026-05-02,completed,4142.44,3526.46,432481,3889,154
+camp_646bc01f2cff,Year-End Wellness — Email,email,individual,2024-11-18,2024-12-07,completed,2209.67,2036.86,190331,3824,254
+camp_dbb8712c7898,Spring Momentum — Paid Social,paid_social,individual,2025-08-28,2025-09-16,completed,2984.18,3031.57,334282,9071,320
+camp_abe0a415b4d8,Q4 Renewal — Sales Outreach,sales_outreach,organization,2026-06-14,2026-07-12,completed,12049.89,12616.77,8128,363,39
+camp_5e9519db3ed4,Habit Streak — Email,email,individual,2025-01-19,2025-02-25,completed,2098.72,2065.21,377955,10740,595
+camp_148195876ebe,Fresh Start — Content Seo,content_seo,individual,2025-04-13,2025-05-07,completed,2580.17,2332.45,495171,10399,509
+camp_d8b5b2a6948f,Year-End Wellness — Paid Social,paid_social,individual,2025-03-28,2025-04-13,completed,4122.71,3835.08,44701,459,35
+camp_bf1a1d15eb26,Year-End Wellness — Referral Program,referral_program,individual,2025-09-15,2025-11-09,completed,2564.83,2315.98,139303,3291,157
+camp_1e9756bfb88a,Summer Movement — Content Seo,content_seo,individual,2025-09-18,2025-10-25,completed,1486.94,1560.55,277138,4805,302
+camp_ad252ca1de7d,Referral Boost — Search Ads,search_ads,individual,2026-07-03,2026-08-06,active,3183.84,2951.27,322417,9641,453
+camp_de1b37b33061,Q1 Push — Sales Outreach,sales_outreach,organization,2026-07-03,2026-08-06,active,3489.17,3583.23,9243,377,38
+camp_c6a128bdf815,Summer Movement — Referral Program,referral_program,individual,2024-08-09,2024-10-08,completed,4441.34,4009.1,272451,6552,298
+camp_29996503fafc,Referral Boost — Trade Show,trade_show,organization,2026-05-22,2026-07-07,completed,9916.61,8732.25,5793,183,31
+camp_44861507a229,Habit Streak — Trade Show,trade_show,organization,2025-12-19,2026-01-03,completed,3454.28,3186.91,10576,207,18
+camp_2ca5a0e8d874,Referral Boost — Sales Outreach,sales_outreach,organization,2025-12-16,2026-01-03,completed,14713.8,14074.36,4620,70,8
+camp_03822a61e16d,Q1 Push — Content Seo,content_seo,individual,2026-04-19,2026-05-30,completed,4839.63,5012.81,405976,9438,227
+camp_3f79e9c143ca,Spring Momentum — Email,email,individual,2025-10-28,2025-12-14,completed,2531.69,2277.46,43568,586,30
+camp_1112176fc1eb,Referral Boost — Paid Social,paid_social,individual,2024-10-17,2024-12-15,completed,3339.96,2991.9,484700,2804,93
+camp_afa9e7a12d60,Q4 Renewal — Referral Program,referral_program,individual,2025-03-13,2025-04-30,completed,1095.4,1136.04,309391,6004,162
+camp_1cd1c5bca02f,Fresh Start — Employer Partnership,employer_partnership,organization,2024-11-10,2024-11-30,completed,10566.78,9730.52,13970,401,64
+camp_f0a99afa2685,Q4 Renewal — Sales Outreach,sales_outreach,organization,2024-10-07,2024-11-15,completed,11466.78,11582.81,4080,81,6
+camp_7bd23f909adc,Summer Movement — Search Ads,search_ads,individual,2025-05-18,2025-06-30,completed,1624.13,1680.41,242328,6107,427
+camp_ec52c84f12d1,Q3 Expansion — Content Seo,content_seo,individual,2024-08-21,2024-09-09,completed,4668.65,4760.81,97194,1473,64
+camp_fb132ad8af35,Year-End Wellness — Employer Partnership,employer_partnership,organization,2025-08-29,2025-09-12,completed,14809.01,13373.14,15409,330,51
+camp_d339d05ff74a,Q2 Growth — Linkedin Ads,linkedin_ads,organization,2025-01-11,2025-02-06,completed,5857.2,6113.4,19478,768,45
+camp_27b74f991013,Back to Routine — Content Seo,content_seo,individual,2025-12-07,2026-01-22,completed,4637.24,4434.25,39821,1156,18
+camp_3d9895e8c256,Habit Streak — Paid Social,paid_social,individual,2026-06-28,2026-07-27,completed,2316.99,2405.78,308673,3443,178
+camp_7fb59a2e382c,Q3 Expansion — Content Seo,content_seo,individual,2026-03-07,2026-04-23,completed,1923.66,1735.44,361129,8272,221
+camp_29f04eba42c1,Summer Movement — Email,email,individual,2025-11-17,2025-12-21,completed,4680.58,4854.45,14883,245,20
+camp_b85545431671,Back to Routine — Search Ads,search_ads,individual,2026-01-06,2026-02-05,completed,1096.05,1008.15,46066,1243,45
