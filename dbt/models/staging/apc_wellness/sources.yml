@@ -4,13 +4,34 @@ sources:
   - name: apc_wellness
     database: db_portfolio
     schema: raw_apc_wellness
+    description: >
+      Raw tables for APC Wellness, loaded via load_apc_wellness.py.
+      Every column is stored as TEXT — type casting happens in staging,
+      not here.
     tables:
       - name: accounts
+        description: Employer/health-plan and individual paying accounts.
       - name: members
+        description: Individual people using the product, each tied to one account.
       - name: plans
+        description: Subscription plan catalog (Standard, Premium).
       - name: subscriptions
+        description: One row per member's subscription, billed per enrolled/active member.
       - name: workouts
+        description: >
+          Daily activity records, 30 members sourced from the real FitBit
+          Fitness Tracker Data (CC0), the rest statistically-similar synthetic data.
       - name: orders
+        description: One-time purchases (coaching sessions, fitness assessments, etc.), separate from recurring subscription billing.
       - name: support_tickets
+        description: >
+          Support tickets sampled from Kaggle's Customer Support Ticket
+          Dataset (CC0); ticket_type holds the source's original category
+          labels, recontextualized to ticket_category in staging.
       - name: campaigns
+        description: Marketing campaign performance snapshots (spend, impressions, clicks, conversions), fully synthetic.
       - name: account_acquisition
+        description: >
+          Lightweight attribution linking a subset of accounts to the
+          campaign that acquired them. Not every account is attributed —
+          this intentionally mirrors real-world incomplete tracking.

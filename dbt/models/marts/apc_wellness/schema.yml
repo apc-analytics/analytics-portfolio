@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: mart_apc_wellness__revenue_trend
+    description: Monthly MRR and one-time revenue trend, straight passthrough of int_apc_wellness__monthly_revenue.
+    columns:
+      - name: month_start
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_apc_wellness__revenue_by_segment
+    description: Active MRR broken down by account type (organization/individual) and plan tier.
+    columns:
+      - name: account_type
+        tests:
+          - not_null
+      - name: plan_name
+        tests:
+          - not_null
+
+  - name: mart_apc_wellness__revenue_by_campaign
+    description: >
+      Every campaign joined to its attributed active MRR (via
+      account_acquisition), with spend_per_attributed_subscription (a
+      rough CAC) and payback_period_months derived from it. NULL in
+      either derived column means the campaign has zero attributed
+      subscriptions, not zero cost — division by zero is undefined, not 0.
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__campaigns')
+              field: campaign_id

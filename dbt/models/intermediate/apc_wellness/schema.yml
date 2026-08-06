@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: int_apc_wellness__member_streaks
+    description: >
+      One row per continuous active streak per member (active day =
+      >=15 combined very+moderately active minutes; any day below that
+      resets the streak). Uses an "islands and gaps" pattern: subtracting
+      each active day's row number from its calendar date groups
+      consecutive active days under a shared value.
+    columns:
+      - name: member_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__members')
+              field: member_id
+
+  - name: int_apc_wellness__monthly_revenue
+    description: >
+      One row per calendar month from the company's first subscription
+      through today, combining MRR (from subscriptions active that
+      month) and one-time order revenue.
+    columns:
+      - name: month_start
+        tests:
+          - unique
+          - not_null

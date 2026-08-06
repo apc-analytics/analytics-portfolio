@@ -1,0 +1,196 @@
+version: 2
+
+models:
+  - name: stg_apc_wellness__accounts
+    description: One row per account (organization or individual), typed and cleaned from raw_apc_wellness.accounts.
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+      - name: account_type
+        tests:
+          - accepted_values:
+              values: ['organization', 'individual']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['active']
+
+  - name: stg_apc_wellness__members
+    description: One row per member, each tied to exactly one account.
+    columns:
+      - name: member_id
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__accounts')
+              field: account_id
+      - name: eligibility_status
+        tests:
+          - accepted_values:
+              values: ['enrolled']
+
+  - name: stg_apc_wellness__plans
+    description: Subscription plan catalog.
+    columns:
+      - name: plan_id
+        tests:
+          - unique
+          - not_null
+      - name: tier
+        tests:
+          - accepted_values:
+              values: ['standard', 'premium']
+
+  - name: stg_apc_wellness__subscriptions
+    description: One row per member's subscription, billed per enrolled/active member.
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+      - name: member_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__members')
+              field: member_id
+      - name: plan_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__plans')
+              field: plan_id
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['active']
+      - name: billed_amount
+        tests:
+          - not_null
+
+  - name: stg_apc_wellness__workouts
+    description: Daily activity records — real FitBit data for 30 seed members, statistically-similar synthetic data for the rest.
+    columns:
+      - name: workout_id
+        tests:
+          - unique
+          - not_null
+      - name: member_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__members')
+              field: member_id
+      - name: data_source
+        tests:
+          - accepted_values:
+              values: ['real_fitbit', 'synthetic']
+
+  - name: stg_apc_wellness__orders
+    description: One-time purchases, separate from recurring subscription billing.
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: member_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__members')
+              field: member_id
+      - name: order_type
+        tests:
+          - accepted_values:
+              values: ['coaching_session', 'challenge_entry_fee', 'fitness_assessment', 'virtual_event_ticket']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed', 'refunded', 'canceled']
+
+  - name: stg_apc_wellness__support_tickets
+    description: >
+      Support tickets sampled from real Kaggle source data. ticket_status
+      is left untested against a fixed value list deliberately — it's a
+      free-form field straight from source data whose full set of
+      possible values isn't something we control or have fully verified,
+      so an accepted_values test here would risk a brittle false failure
+      rather than catching a real bug. ticket_category, which we define
+      ourselves via the remap in this model, is tested instead.
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+      - name: member_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__members')
+              field: member_id
+      - name: ticket_category
+        tests:
+          - accepted_values:
+              values:
+                - 'App/device sync issue'
+                - 'Billing & subscription question'
+                - 'Program/feature question'
+                - 'Cancellation request'
+                - 'Refund request'
+
+  - name: stg_apc_wellness__campaigns
+    description: Marketing campaign performance snapshots, fully synthetic.
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+      - name: channel
+        tests:
+          - accepted_values:
+              values:
+                - 'paid_social'
+                - 'search_ads'
+                - 'email'
+                - 'referral_program'
+                - 'content_seo'
+                - 'sales_outreach'
+                - 'employer_partnership'
+                - 'trade_show'
+                - 'linkedin_ads'
+      - name: target_audience
+        tests:
+          - accepted_values:
+              values: ['individual', 'organization']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed', 'active']
+
+  - name: stg_apc_wellness__account_acquisition
+    description: >
+      Attribution linking a subset of accounts to the campaign that
+      acquired them. Not every account appears here — untracked
+      acquisition (organic, referral, word of mouth) is expected and
+      intentional, so this table's row count is not expected to equal
+      accounts' row count.
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__accounts')
+              field: account_id
+      - name: campaign_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apc_wellness__campaigns')
+              field: campaign_id
