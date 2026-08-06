@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: apc_wellness
+    database: db_portfolio
+    schema: raw_apc_wellness
+    tables:
+      - name: accounts
+      - name: members
+      - name: plans
+      - name: subscriptions
+      - name: workouts

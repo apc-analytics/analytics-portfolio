@@ -41,6 +41,7 @@ TABLES = {
     "plans": "plans.csv",
     "subscriptions": "subscriptions.csv",
     "workouts": "workouts.csv",
+    "orders": "orders.csv",
 }
 
 
@@ -64,7 +65,7 @@ def load_table(conn, table_name: str, csv_path: Path):
     column_defs = ", ".join(f'"{c}" TEXT' for c in columns)
 
     with conn.cursor() as cur:
-        cur.execute(f'DROP TABLE IF EXISTS {SCHEMA}."{table_name}";')
+        cur.execute(f'DROP TABLE IF EXISTS {SCHEMA}."{table_name}" CASCADE;')
         cur.execute(f'CREATE TABLE {SCHEMA}."{table_name}" ({column_defs});')
         with open(csv_path, "r", newline="") as f:
             cur.copy_expert(
