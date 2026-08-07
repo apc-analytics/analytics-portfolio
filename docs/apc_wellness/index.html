@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APC Wellness — Alex Cappola Analytics Portfolio</title>
+<meta name="description" content="A hybrid B2B2C/D2C fitness and habit-building platform, built on PostgreSQL, dbt, and Metabase.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1214;
+    --panel: #171B1E;
+    --border: #262B2F;
+    --text: #EDEAE2;
+    --muted: #8B9198;
+    --accent: #E3A83B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .back {
+    display: inline-block;
+    margin-top: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .back:hover { color: var(--accent); }
+  header.hero { padding: 24px 0 64px; border-bottom: 1px solid var(--border); }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 24px 0 18px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.1rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+  .tagline { font-size: 1.05rem; color: var(--muted); max-width: 56ch; margin: 0; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 20px;
+  }
+  p { color: var(--text); max-width: 62ch; }
+  p.muted { color: var(--muted); }
+  .domains { list-style: none; margin: 0; padding: 0; }
+  .domains li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+  }
+  .domains li:first-child { border-top: none; }
+  .domains .label { font-size: 0.98rem; }
+  .domains .label small { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: rgba(227,168,59,0.12);
+    color: var(--accent);
+  }
+  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+  .cta {
+    display: inline-block;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: 6px;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease;
+  }
+  .cta:hover { border-color: var(--accent); }
+  .empty-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer {
+    padding: 48px 0 80px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 520px) {
+    .domains li { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">&larr; All companies</a>
+    <header class="hero">
+      <p class="eyebrow">Health tech</p>
+      <h1>APC Wellness</h1>
+      <p class="tagline">
+        A hybrid B2B2C/D2C fitness and habit-building platform — sold
+        through employer/health-plan sponsorship as well as direct
+        individual subscriptions. Employers are billed per enrolled/active
+        member; self-pay individuals subscribe directly at plan list price.
+      </p>
+    </header>
+
+    <section>
+      <h2>Architecture</h2>
+      <p class="muted">
+        One shared PostgreSQL warehouse (<code>db_portfolio</code>),
+        company-scoped schemas (<code>*_apc_wellness</code>), dbt Core for
+        transformation, Metabase for dashboards.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="../schema/apc_wellness/apc_wellness_account_model.html">View account model &rarr;</a>
+        <a class="cta" href="https://github.com/apc-analytics/analytics-portfolio/tree/main/dbt/models">Browse dbt models &rarr;</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data domains</h2>
+      <ul class="domains">
+        <li>
+          <span class="label">Accounts &amp; subscriptions
+            <small>Employer and individual accounts, members, plans, billing</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+        <li>
+          <span class="label">Product events
+            <small>Daily activity (real FitBit data + synthetic), streak calculation</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+        <li>
+          <span class="label">Orders
+            <small>Coaching sessions, fitness assessments, challenge fees, event tickets</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+        <li>
+          <span class="label">Marketing
+            <small>Campaign performance, lightweight account-level attribution</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+        <li>
+          <span class="label">Support
+            <small>Tickets sampled from real support-ticket data, recontextualized categories</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+        <li>
+          <span class="label">Finance
+            <small>MRR trend, revenue by segment, revenue by campaign — fully derived, no raw source</small>
+          </span>
+          <span class="status">Built</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Case studies</h2>
+      <p class="empty-note">Coming soon.</p>
+    </section>
+
+    <footer>
+      <a href="https://github.com/apc-analytics/analytics-portfolio">GitHub repo</a>
+      <a href="mailto:acappola@gmail.com">Email</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alex Cappola — Analytics Portfolio</title>
-<meta name="description" content="An end-to-end analytics ecosystem: PostgreSQL, dbt, and Metabase, built around one fictional SaaS company.">
+<meta name="description" content="An end-to-end analytics ecosystem for each industry I've worked in: PostgreSQL, dbt, and Metabase, built around fictional companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,10 +17,7 @@
     --muted: #8B9198;
     --accent: #E3A83B;
   }
-
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
   body {
     margin: 0;
     background: var(--bg);
@@ -29,14 +26,10 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
   a { color: var(--accent); }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-
   header.hero { padding: 96px 0 64px; border-bottom: 1px solid var(--border); }
-
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
@@ -45,7 +38,6 @@
     text-transform: uppercase;
     margin: 0 0 18px;
   }
-
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -53,73 +45,50 @@
     line-height: 1.15;
     margin: 0 0 20px;
   }
-
-  .tagline { font-size: 1.05rem; color: var(--muted); max-width: 52ch; margin: 0; }
-
+  .tagline { font-size: 1.05rem; color: var(--muted); max-width: 56ch; margin: 0; }
   section { padding: 56px 0; border-bottom: 1px solid var(--border); }
   section:last-of-type { border-bottom: none; }
-
   h2 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 1.4rem;
     margin: 0 0 20px;
   }
-
   p { color: var(--text); max-width: 62ch; }
   p.muted { color: var(--muted); }
-
-  .pipeline {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    margin-top: 28px;
-  }
-
-  .pipeline .stage {
+  .company-card {
+    display: block;
     border: 1px solid var(--border);
     background: var(--panel);
-    color: var(--muted);
-    padding: 10px 14px;
-    border-radius: 3px;
+    border-radius: 6px;
+    padding: 24px 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease;
   }
-
-  .pipeline .stage.active { border-color: var(--accent); color: var(--accent); }
-  .pipeline .arrow { color: var(--border); }
-
-  .phases { list-style: none; margin: 0; padding: 0; }
-
-  .phases li {
-    display: grid;
-    grid-template-columns: 40px 1fr auto;
-    align-items: baseline;
-    gap: 16px;
-    padding: 16px 0;
-    border-top: 1px solid var(--border);
-  }
-
-  .phases li:first-child { border-top: none; }
-
-  .phases .num { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 13px; }
-  .phases .label { font-size: 0.98rem; }
-  .phases .label small { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
-
-  .status {
+  .company-card:hover { border-color: var(--accent); }
+  .company-card .industry {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.04em;
-    padding: 3px 9px;
-    border-radius: 3px;
     text-transform: uppercase;
-    white-space: nowrap;
+    color: var(--accent);
+    margin: 0 0 8px;
   }
-
-  .status.active { background: rgba(227,168,59,0.12); color: var(--accent); }
-  .status.pending { background: rgba(139,145,152,0.12); color: var(--muted); }
-
+  .company-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    margin: 0 0 8px;
+  }
+  .company-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
   footer {
     padding: 48px 0 80px;
     display: flex;
@@ -128,82 +97,40 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
   }
-
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--accent); }
-
-  @media (max-width: 520px) {
-    .phases li { grid-template-columns: 28px 1fr; }
-    .phases .status { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <p class="eyebrow">Analytics Portfolio — In Progress</p>
-      <h1>One warehouse.<br>Every case study.</h1>
+      <p class="eyebrow">Analytics Portfolio</p>
+      <h1>One warehouse per industry.</h1>
       <p class="tagline">
-        Alex Cappola - Data Analyst. This is a public, end-to-end analytics
-        environment built around three fictional SaaS companies: PostgreSQL,
-        dbt, and Metabase, modeled the way a real analytics team would build it.
+        Alex Cappola — Data Analyst. Each company below is a fictional
+        business built around a full analytics ecosystem — PostgreSQL,
+        dbt, and Metabase — modeled the way a real analytics team would
+        build it, in the industry it's meant to represent.
       </p>
     </header>
 
     <section>
-      <h2>How it's built</h2>
-      <p class="muted">
-        Instead of disconnected notebooks, every case study on this site draws
-        from the same warehouse moving through the same pipeline: customers, subscriptions, product events,
-        orders, campaigns, support, and finance
-      </p>
-      <div class="pipeline">
-        <span class="stage">raw</span>
-        <span class="arrow">→</span>
-        <span class="stage active">staging</span>
-        <span class="arrow">→</span>
-        <span class="stage">intermediate</span>
-        <span class="arrow">→</span>
-        <span class="stage">marts</span>
-        <span class="arrow">→</span>
-        <span class="stage">metabase</span>
-      </div>
+      <h2>Companies</h2>
+      <a class="company-card" href="apc_wellness/index.html">
+        <p class="industry">Health tech</p>
+        <h3>APC Wellness</h3>
+        <p>A hybrid B2B2C/D2C fitness and habit-building platform — sold through employer/health-plan sponsorship as well as direct individual subscriptions.</p>
+      </a>
     </section>
 
     <section>
-      <h2>Build log</h2>
-      <ul class="phases">
-        <li>
-          <span class="num">01</span>
-          <span class="label">Foundation
-            <small>Repository, GitHub Pages, folder structure, db_portfolio, Metabase</small>
-          </span>
-          <span class="status active">In progress</span>
-        </li>
-        <li>
-          <span class="num">02</span>
-          <span class="label">Data warehouse
-            <small>Schema design, staging models, marts, tests</small>
-          </span>
-          <span class="status pending">Not started</span>
-        </li>
-        <li>
-          <span class="num">03</span>
-          <span class="label">Analytics
-            <small>Dashboards, case studies, published write-ups</small>
-          </span>
-          <span class="status pending">Not started</span>
-        </li>
-        <li>
-          <span class="num">04</span>
-          <span class="label">Interview readiness
-            <small>SQL cookbook, architecture diagrams, dbt docs</small>
-          </span>
-          <span class="status pending">Not started</span>
-        </li>
-      </ul>
+      <h2>Stack</h2>
+      <div class="stack">
+        <span>PostgreSQL 18</span>
+        <span>dbt Core</span>
+        <span>Metabase (Open Source)</span>
+        <span>GitHub Pages</span>
+      </div>
     </section>
 
     <footer>
