@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APC Wellness — Data Model</title>
+<style>
+  :root {
+    --bg: #0F1214;
+    --panel: #171B1E;
+    --border: #262B2F;
+    --text: #EDEAE2;
+    --muted: #8B9198;
+    --accent: #E3A83B;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 900px;
+    margin: 48px auto;
+    padding: 0 24px;
+  }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  p.meta { color: var(--muted); font-size: 0.9rem; margin-top: 0; margin-bottom: 32px; max-width: 70ch; }
+  code { background: var(--panel); padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+  a.back { display: inline-block; margin-top: 32px; font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+  a.back:hover { color: var(--accent); }
+  #erd svg.erDiagram .divider path { stroke-opacity: 0.5; }
+  #erd svg.erDiagram .row-rect-odd path,
+  #erd svg.erDiagram .row-rect-odd rect,
+  #erd svg.erDiagram .row-rect-even path,
+  #erd svg.erDiagram .row-rect-even rect {
+    stroke: none !important;
+    fill: #171B1E !important;
+  }
+  #erd svg.erDiagram text {
+    fill: #EDEAE2 !important;
+  }
+</style>
+</head>
+<body>
+<h1>APC Wellness — data model</h1>
+<p class="meta">
+  All nine staging models plus the <code>member_streaks</code> intermediate
+  model in the <code>db_portfolio</code> warehouse (<code>*_apc_wellness</code>
+  schemas). <code>int_apc_wellness__monthly_revenue</code> is intentionally
+  left off this diagram — it's a time-bucketed aggregate with no actual
+  foreign key to any entity here, so drawing a relationship line to it would
+  imply a join key that doesn't exist.
+</p>
+<div id="erd"></div>
+<a class="back" href="../../apc_wellness/index.html">&larr; Back to portfolio</a>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Segoe UI", sans-serif',
+  themeVariables: {
+    darkMode: true,
+    fontSize: '13px',
+    primaryColor: '#262B2F',
+    primaryTextColor: '#EDEAE2',
+    primaryBorderColor: '#3a3f44',
+    lineColor: '#9c9a92',
+    textColor: '#EDEAE2',
+    attributeBackgroundColorOdd: '#171B1E',
+    attributeBackgroundColorEven: '#1c2226',
+  },
+});
+const { svg } = await mermaid.render('erd-svg', `erDiagram
+  ACCOUNTS ||--o{ MEMBERS : has
+  MEMBERS ||--o{ SUBSCRIPTIONS : enrolls_in
+  PLANS ||--o{ SUBSCRIPTIONS : defines
+  MEMBERS ||--o{ WORKOUTS : logs
+  MEMBERS ||--o{ ORDERS : places
+  MEMBERS ||--o{ SUPPORT_TICKETS : files
+  MEMBERS ||--o{ MEMBER_STREAKS : has
+  ACCOUNTS ||--o{ ACCOUNT_ACQUISITION : attributed_via
+  CAMPAIGNS ||--o{ ACCOUNT_ACQUISITION : acquires
+  ACCOUNTS {
+    uuid account_id PK
+    string account_type
+    string account_name
+    string status
+  }
+  MEMBERS {
+    uuid member_id PK
+    uuid account_id FK
+    string email
+    date join_date
+    string eligibility_status
+  }
+  PLANS {
+    uuid plan_id PK
+    string plan_name
+    string tier
+    decimal monthly_price
+  }
+  SUBSCRIPTIONS {
+    uuid subscription_id PK
+    uuid member_id FK
+    uuid plan_id FK
+    date start_date
+    date end_date
+    string status
+    decimal billed_amount
+  }
+  WORKOUTS {
+    uuid workout_id PK
+    uuid member_id FK
+    date activity_date
+    int steps
+    decimal distance_km
+    int very_active_minutes
+    int moderately_active_minutes
+    int light_active_minutes
+    int sedentary_minutes
+    int calories_burned
+    string data_source
+  }
+  ORDERS {
+    uuid order_id PK
+    uuid member_id FK
+    string order_type
+    date order_date
+    decimal amount
+    string status
+  }
+  SUPPORT_TICKETS {
+    uuid ticket_id PK
+    uuid member_id FK
+    string ticket_category
+    string ticket_status
+    string ticket_priority
+    string ticket_channel
+    int csat_rating
+    date created_at
+    date resolved_at
+  }
+  CAMPAIGNS {
+    uuid campaign_id PK
+    string campaign_name
+    string channel
+    string target_audience
+    date start_date
+    date end_date
+    string status
+    decimal budget
+    decimal spend
+    int impressions
+    int clicks
+    int conversions
+  }
+  ACCOUNT_ACQUISITION {
+    uuid account_id FK
+    uuid campaign_id FK
+  }
+  MEMBER_STREAKS {
+    uuid member_id FK
+    date streak_start_date
+    date streak_end_date
+    int streak_length_days
+    int streak_recency_rank
+  }`);
+document.getElementById('erd').innerHTML = svg;
+document.querySelectorAll('#erd svg.erDiagram .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+document.querySelectorAll('#erd svg.erDiagram .row-rect-odd path, #erd svg.erDiagram .row-rect-even path').forEach(p => {
+  p.setAttribute('stroke', 'none');
+});
+</script>
+</body>
+</html>
