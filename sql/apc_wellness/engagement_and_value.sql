@@ -1,3 +1,10 @@
+-- Engagement & value by account segment (employer-sponsored vs. self-pay)
+--
+-- Written and validated ad hoc, then promoted unchanged into
+-- mart_apc_wellness__engagement_by_segment (dbt/models/marts/apc_wellness/).
+-- See case-studies/apc_wellness/engagement-by-segment.md for the full
+-- walkthrough, findings, and the bugs caught while building this.
+
 with
 
     as_of_date as (

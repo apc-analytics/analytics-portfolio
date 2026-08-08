@@ -19,6 +19,27 @@ models:
         tests:
           - not_null
 
+  - name: mart_apc_wellness__engagement_by_segment
+    description: >
+      Engagement (streaks) and value (MRR + one-time orders) broken down
+      by account type and plan tier, with average membership tenure
+      included specifically to check whether one segment simply has more
+      time to accumulate engagement/orders than another before drawing
+      conclusions from the raw numbers. Promoted from an ad-hoc query
+      written and peer-reviewed for the "employer-sponsored vs. self-pay"
+      case study.
+    columns:
+      - name: account_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['organization', 'individual']
+      - name: tier
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['standard', 'premium']
+
   - name: mart_apc_wellness__revenue_by_campaign
     description: >
       Every campaign joined to its attributed active MRR (via
