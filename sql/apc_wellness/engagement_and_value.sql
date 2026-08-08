@@ -50,8 +50,12 @@ select
     , round(avg(mls.longest_streak), 1) as avg_longest_streak_days
 
     , sum(mo.count_orders) as count_orders -- these are one-time purchases instead of subscriptions
+
+    , round(avg(aod.as_of_date - m.join_date), 1) as avg_length_of_membership_days
+    , round(avg(aod.as_of_date - m.join_date) / 30, 1) as avg_length_of_membership_months
 from
     db_portfolio.stg_apc_wellness.stg_apc_wellness__members as m
+        cross join as_of_date as aod
         left join db_portfolio.stg_apc_wellness.stg_apc_wellness__accounts as a
             on m.account_id = a.account_id
         join db_portfolio.stg_apc_wellness.stg_apc_wellness__subscriptions as s
