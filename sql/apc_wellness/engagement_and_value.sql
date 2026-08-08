@@ -46,7 +46,7 @@ select
     , round((sum(s.billed_amount) / count(distinct m.member_id)), 2) as rev_per_member
 
     , count(case when mrs.is_current = 1 then m.member_id end) as count_mem_with_current_streak
-    , max(case when mrs.is_current = 1 then mrs.streak_length_days end) as max_current_streak_length
+    , round(avg(case when mrs.is_current = 1 then mrs.streak_length_days end), 1) as avg_current_streak_length
     , round(avg(mls.longest_streak), 1) as avg_longest_streak_days
 
     , sum(mo.count_orders) as count_orders -- these are one-time purchases instead of subscriptions
