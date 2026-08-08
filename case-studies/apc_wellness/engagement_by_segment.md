@@ -6,7 +6,7 @@
 
 ## The Ask
 
-APC Wellness sells two fundamentally different ways: through employer/health-plan
+APC Wellness sells through two fundamentally different channels: through employer/health-plan
 sponsorship, and direct self-pay subscriptions. The VP of Product wanted a
 straight answer to four questions before deciding where to invest next:
 
