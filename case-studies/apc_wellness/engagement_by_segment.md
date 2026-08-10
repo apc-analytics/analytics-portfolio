@@ -166,6 +166,8 @@ query before being trusted as the dashboard's source.
 
 ## Results
 
+![MRR by segment, employer-sponsored vs. self-pay](images/mrr_by_segment.jpg)
+
 | Segment | Members | Total MRR | Rev/Member | % w/ Current Streak | Avg Current Streak | Avg Longest Streak | Orders/Member | Avg Tenure |
 |---|---|---|---|---|---|---|---|---|
 | Individual · Premium | 28 | $699.72 | $24.99 | 46% | 2.0 days | 5.0 days | 0.89 | 9.8 mo |
@@ -180,6 +182,8 @@ few weeks' spread, not a multiple. Whatever differences appear below
 aren't explained away by one segment simply having more time to
 accumulate activity or spend.
 
+![MRR by segment, employer-sponsored vs. self-pay](images/avg_tenure_by_segment.jpg)
+
 **Engagement Favors Organization-Sponsored Members**
 - This is happening despite averaging *slightly less* tenure, not more: 51–52% currently active vs. 38–46% for
 self-pay.
@@ -188,11 +192,15 @@ differentiator is *participation*, and not intensity.
 - This runs against the intuitive "people try harder when it's their own money" story, and fits
 better with reduced signup friction and a possible cohort/social effect from being enrolled alongside coworkers.
 
+![MRR by segment, employer-sponsored vs. self-pay](images/current_streak_rate_by_segment.jpg)
+
 **Value Splits Two Ways instead of One**
 - Self-pay members generate more *per member* ($14.99–$24.99 vs. $11.62–$11.76) and buy more one-time
 add-ons per person (0.75–0.89 vs. 0.41–0.66 orders/member).
 - This is consistent with a self-selected, already-committed buyer.
 - But organizations dominate *total* MRR ($4,725 vs. $1,734) purely on volume (403 members vs. 97).
+
+![MRR by segment, employer-sponsored vs. self-pay](images/orders_per_member_by_segment.jpg)
 
 **One Number Looks Like a Bug but Is Not:**
 - Organization-Premium bills almost identically to organization-Standard ($11.62 vs. $11.76).
