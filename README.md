@@ -1,7 +1,6 @@
 # Analytics Portfolio - Alex Cappola
 
-A public analytics case study repository, built around one fictional SaaS
-company shared across all case studies — the same underlying warehouse,
-answering a different business question each time.
+A public analytics case study repository, built around multiple fictional SaaS
+companies emulating real-world data structures, business scenarios, and industries reflective of my experience, all sharing the same underlying data warehouse,
 
-**Status:** just started. Structure, dbt project, and dashboards to follow.
+**Status:** in progress. Full dbt warehouse structure is built. Case studies are currently being worked and added as they are completed.
