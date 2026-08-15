@@ -13,8 +13,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_apc_wellness__members')
-              field: member_id
+              arguments:
+                to: ref('stg_apc_wellness__members')
+                field: member_id
 
   - name: int_apc_wellness__monthly_revenue
     description: >

@@ -33,12 +33,14 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['organization', 'individual']
+              arguments:
+                values: ['organization', 'individual']
       - name: tier
         tests:
           - not_null
           - accepted_values:
-              values: ['standard', 'premium']
+              arguments:
+                values: ['standard', 'premium']
 
   - name: mart_apc_wellness__revenue_by_campaign
     description: >
@@ -53,5 +55,45 @@ models:
           - unique
           - not_null
           - relationships:
-              to: ref('stg_apc_wellness__campaigns')
-              field: campaign_id
+              arguments:
+                to: ref('stg_apc_wellness__campaigns')
+                field: campaign_id
+
+  - name: mart_apc_wellness__tickets_overall
+    description: >
+      Whole-portfolio support ticket metrics — volume, CSAT, resolution
+      time, and open/pending/closed counts and ages. as_of_date anchors
+      to max(created_at) in the source table (not current_date, and not
+      max(resolved_at) — the latter under-ages the backlog, since it's
+      only populated for closed tickets and lags behind when the
+      snapshot was actually taken).
+
+  - name: mart_apc_wellness__tickets_by_category
+    description: Support ticket metrics broken down by ticket_category, with avg_overall_csat_rating carried alongside each row for easy comparison against the whole-portfolio baseline.
+    columns:
+      - name: ticket_category
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_apc_wellness__tickets_by_priority
+    description: Support ticket metrics broken down by ticket_priority.
+    columns:
+      - name: ticket_priority
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Critical', 'High', 'Medium', 'Low']
+
+  - name: mart_apc_wellness__tickets_by_channel
+    description: Support ticket metrics broken down by ticket_channel.
+    columns:
+      - name: ticket_channel
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Chat', 'Email', 'Social media', 'Phone']

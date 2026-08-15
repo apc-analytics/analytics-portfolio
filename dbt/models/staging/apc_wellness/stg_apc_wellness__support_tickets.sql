@@ -17,7 +17,7 @@ renamed as (
         , ticket_status
         , ticket_priority
         , ticket_channel
-        , nullif(csat_rating, '')::int as csat_rating
+        , nullif(csat_rating, '')::numeric::int as csat_rating
         , created_at::date as created_at
         , nullif(resolved_at, '')::date as resolved_at
     from

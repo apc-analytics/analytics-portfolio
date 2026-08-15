@@ -1,0 +1,1 @@
+select * from {{ ref('int_apc_wellness__monthly_revenue') }}
