@@ -40,7 +40,7 @@ with
                 cross join as_of_date as ad
         group by 1, 2
         order by 2 desc
-    ) -- select * from category_metrics;
+    ) select * from category_metrics;
 
     , priority_metrics as (
         select

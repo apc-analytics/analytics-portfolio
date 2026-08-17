@@ -24,7 +24,7 @@ straight answer to four questions before deciding where to invest next:
 ## Building the Query
 
 This started as an ad-hoc SQL exploration
-([`sql/apc_wellness/engagement_and_value.sql`](../../sql/apc_wellness/engagement_and_value.sql)),
+([`sql/apc_wellness/engagement_and_value.sql`](../../../../sql/apc_wellness/engagement_and_value.sql)),
 written and validated by hand before being promoted into a permanent dbt
 mart. A few real bugs surfaced along the way that are worth walking through
 explicitly. These are the kind that don't throw an error and don't look wrong at a
@@ -159,14 +159,14 @@ group by 1, 2
 ```
 
 This was promoted (unchanged) into
-[`mart_apc_wellness__engagement_by_segment`](../../dbt/models/marts/apc_wellness/mart_apc_wellness__engagement_by_segment.sql),
+[`mart_apc_wellness__engagement_by_segment`](../../../../dbt/models/marts/apc_wellness/mart_apc_wellness__engagement_by_segment.sql),
 with `not_null`/`accepted_values` tests on `account_type` and `tier`, both
 passing, and the mart's output verified row-for-row identical to this
 query before being trusted as the dashboard's source.
 
 ## Results
 
-![MRR by segment, employer-sponsored vs. self-pay](images/mrr_by_segment.jpg)
+![MRR by segment, employer-sponsored vs. self-pay](mrr_by_segment.jpg)
 
 | Segment | Members | Total MRR | Rev/Member | % w/ Current Streak | Avg Current Streak | Avg Longest Streak | Orders/Member | Avg Tenure |
 |---|---|---|---|---|---|---|---|---|
@@ -182,7 +182,7 @@ few weeks' spread, not a multiple. Whatever differences appear below
 aren't explained away by one segment simply having more time to
 accumulate activity or spend.
 
-![MRR by segment, employer-sponsored vs. self-pay](images/avg_tenure_by_segment.jpg)
+![Average membership tenure by segment](avg_tenure_by_segment.jpg)
 
 **Engagement Favors Organization-Sponsored Members**
 - This is happening despite averaging *slightly less* tenure, not more: 51–52% currently active vs. 38–46% for
@@ -192,7 +192,7 @@ differentiator is *participation*, and not intensity.
 - This runs against the intuitive "people try harder when it's their own money" story, and fits
 better with reduced signup friction and a possible cohort/social effect from being enrolled alongside coworkers.
 
-![MRR by segment, employer-sponsored vs. self-pay](images/current_streak_rate_by_segment.jpg)
+![Current streak rate by segment](current_streak_rate_by_segment.jpg)
 
 **Value Splits Two Ways instead of One**
 - Self-pay members generate more *per member* ($14.99–$24.99 vs. $11.62–$11.76) and buy more one-time
@@ -200,7 +200,7 @@ add-ons per person (0.75–0.89 vs. 0.41–0.66 orders/member).
 - This is consistent with a self-selected, already-committed buyer.
 - But organizations dominate *total* MRR ($4,725 vs. $1,734) purely on volume (403 members vs. 97).
 
-![MRR by segment, employer-sponsored vs. self-pay](images/orders_per_member_by_segment.jpg)
+![One-time orders per member by segment](orders_per_member_by_segment.jpg)
 
 **One Number Looks Like a Bug but Is Not:**
 - Organization-Premium bills almost identically to organization-Standard ($11.62 vs. $11.76).
