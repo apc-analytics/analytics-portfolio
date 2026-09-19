@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: apc_finance
+    database: db_portfolio
+    schema: raw_apc_finance
+    description: >
+      Raw tables for APC Finance, loaded via load_apc_finance.py. Every
+      column is stored as TEXT (type casting happens in staging, not
+      here. Fully synthetic), since no public dataset fits a multi-lender
+      marketplace's competing-offer structure.
+    tables:
+      - name: borrowers
+        description: Individual borrowers using the marketplace, each with a credit tier.
+      - name: lenders
+        description: Partner lending institutions competing on the marketplace, each with a minimum credit tier and APR band.
+      - name: loan_applications
+        description: One row per loan request submitted by a borrower.
+      - name: loan_offers
+        description: >
+          One row per lender's competing offer against an application.
+          Not every eligible lender bids on every application, and not
+          every application receives any offers.
+      - name: loans
+        description: >
+          The one accepted offer per application that actually funded.
+          origination_fee_pct/amount is APC Finance's own revenue cut
+          from the lender, not a fee charged to the borrower. No
+          repayment or performance data exists here or anywhere in this
+          company's warehouse — a marketplace's business ends at
+          funding, so what happens after belongs to the lender, not
+          APC Finance.

@@ -1,0 +1,11 @@
+lender_id,lender_name,min_credit_tier,apr_min,apr_max,origination_fee_pct,status
+lnd_ebd3fcc47db6,Meridian Personal Loans,Excellent,0.059,0.099,0.02,active
+lnd_035d3bde8267,Northstar Lending Co.,Excellent,0.065,0.11,0.018,active
+lnd_eb741dcfd1a0,Bluegate Financial,Good,0.089,0.15,0.022,active
+lnd_54a37531f7e5,Harborline Credit Union,Good,0.079,0.14,0.015,active
+lnd_5201a46cec3a,Crestview Lending,Good,0.095,0.165,0.025,active
+lnd_68d1bb39a009,Pinnacle Consumer Finance,Fair,0.13,0.22,0.03,active
+lnd_2e2adcc3d662,Ashford Capital Partners,Fair,0.14,0.23,0.028,active
+lnd_f0806e150f18,Summit Bridge Lending,Fair,0.12,0.21,0.032,active
+lnd_abf7ad1fc508,Redwood Trust Loans,Poor,0.22,0.359,0.045,active
+lnd_40648b57da4a,Ironclad Financial,Poor,0.199,0.359,0.04,active

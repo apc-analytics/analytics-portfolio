@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: stg_apc_finance__borrowers
+    description: One row per borrower using the marketplace.
+    columns:
+      - name: borrower_id
+        tests:
+          - unique
+          - not_null
+      - name: credit_tier
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Excellent', 'Good', 'Fair', 'Poor']
+
+  - name: stg_apc_finance__lenders
+    description: Partner lending institutions competing on the marketplace.
+    columns:
+      - name: lender_id
+        tests:
+          - unique
+          - not_null
+      - name: min_credit_tier
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Excellent', 'Good', 'Fair', 'Poor']
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['active']
+
+  - name: stg_apc_finance__loan_applications
+    description: One row per loan request submitted by a borrower.
+    columns:
+      - name: application_id
+        tests:
+          - unique
+          - not_null
+      - name: borrower_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__borrowers')
+                field: borrower_id
+      - name: loan_purpose
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['debt_consolidation', 'medical', 'home_improvement', 'major_purchase', 'other']
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined', 'no_offers']
+
+  - name: stg_apc_finance__loan_offers
+    description: One row per lender's competing offer against an application.
+    columns:
+      - name: offer_id
+        tests:
+          - unique
+          - not_null
+      - name: application_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__loan_applications')
+                field: application_id
+      - name: borrower_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__borrowers')
+                field: borrower_id
+      - name: lender_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__lenders')
+                field: lender_id
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['accepted', 'declined']
+
+  - name: stg_apc_finance__loans
+    description: >
+      The one accepted offer per application that actually funded. No
+      repayment/performance data exists anywhere in this warehouse — a
+      marketplace's business ends at funding.
+    columns:
+      - name: loan_id
+        tests:
+          - unique
+          - not_null
+      - name: offer_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__loan_offers')
+                field: offer_id
+      - name: borrower_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__borrowers')
+                field: borrower_id
+      - name: lender_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_apc_finance__lenders')
+                field: lender_id
+      - name: funded_amount
+        tests:
+          - not_null
+      - name: origination_fee_amount
+        tests:
+          - not_null
