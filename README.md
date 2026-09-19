@@ -1,6 +1,15 @@
-# Analytics Portfolio - Alex Cappola
+# Analytics Portfolio — Alex Cappola
 
-A public analytics case study repository, built around multiple fictional SaaS
-companies emulating real-world data structures, business scenarios, and industries reflective of my experience, all sharing the same underlying data warehouse,
+A public analytics environment made up of multiple fictional companies, one
+per industry I've worked in. Each with its own warehouse schema, dbt
+models, and case studies, so the portfolio can be tailored to whoever's
+reviewing it.
 
-**Status:** in progress. Full dbt warehouse structure is built. Case studies are currently being worked and added as they are completed.
+## Companies
+
+| Company | Industry | Status |
+|---|---|---|
+| APC Wellness | Health tech - preventive/wellness | Complete |
+| APC Finance | Fintech - personal lending marketplace | In Progress |
+
+See [`docs/`](docs/) for the live site, and [`case-studies/`](case-studies/) for full write-ups.

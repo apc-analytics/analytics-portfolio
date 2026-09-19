@@ -19,11 +19,17 @@ models:
       +materialized: view
       apc_wellness:
         +schema: stg_apc_wellness
+      apc_finance:
+        +schema: stg_apc_finance
     intermediate:
       +materialized: view
       apc_wellness:
         +schema: int_apc_wellness
+      apc_finance:
+        +schema: int_apc_finance
     marts:
       +materialized: table
       apc_wellness:
         +schema: mart_apc_wellness
+      apc_finance:
+        +schema: mart_apc_finance
