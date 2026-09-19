@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: mart_apc_finance__funnel_overall
+    description: Application funnel outcome (funded / offers_declined / no_offers), whole-portfolio share.
+    columns:
+      - name: status
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined', 'no_offers']
+
+  - name: mart_apc_finance__funnel_by_credit_tier
+    description: Application funnel outcome broken down by borrower credit tier, with percentage computed within each tier.
+    columns:
+      - name: credit_tier
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Excellent', 'Good', 'Fair', 'Poor']
+      - name: status
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined', 'no_offers']
+
+  - name: mart_apc_finance__funnel_by_purpose
+    description: Application funnel outcome broken down by loan purpose, with percentage computed within each purpose.
+    columns:
+      - name: loan_purpose
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['debt_consolidation', 'medical', 'home_improvement', 'major_purchase', 'other']
+      - name: status
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined', 'no_offers']
+
+  - name: mart_apc_finance__funnel_walked_away
+    description: >
+      Compares funded vs. offers_declined applications directly on offer
+      count and APR, to test whether borrowers who walked away were simply
+      offered less (fewer/worse options) or declined despite comparable offers.
+    columns:
+      - name: status
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined']

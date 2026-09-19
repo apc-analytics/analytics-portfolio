@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_apc_finance__application_funnel
+    description: >
+      One row per loan application, with offer statistics (count, avg/min/max
+      APR) pre-aggregated in from loan_offers to keep the grain safe since
+      loan_offers is one-to-many with applications, so this collapses it to
+      one row per application before any downstream mart joins or groups on it.
+      count_offers is coalesced to 0 for no-offer applications; the APR
+      columns are deliberately left NULL in that case rather than 0, since
+      "average APR of zero offers" is undefined, not zero.
+    columns:
+      - name: application_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['funded', 'offers_declined', 'no_offers']
